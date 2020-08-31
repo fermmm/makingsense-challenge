@@ -1,9 +1,9 @@
-import { useKeyPress } from 'ahooks';
 import equal from 'fast-deep-equal';
 import React, { FC, useEffect, useState } from 'react';
 import { hot } from 'react-hot-loader';
 import { MapTools } from '../../../levels/tools/mapTools';
 import { LevelData, TileData, Vector } from '../../../levels/tools/types/levelTypes';
+import { useKeyPress } from '../../../tools/hooks/useKeyPress';
 import { Column } from '../../common/Column/Column';
 import { Row } from '../../common/Row/Row';
 import { FinishTile } from './FinishTile/FinishTile';
