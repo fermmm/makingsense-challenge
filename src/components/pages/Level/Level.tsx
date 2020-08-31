@@ -6,9 +6,10 @@ import { MapTools } from '../../../levels/tools/mapTools';
 import { LevelData, TileData, Vector } from '../../../levels/tools/types/levelTypes';
 import { Column } from '../../common/Column/Column';
 import { Row } from '../../common/Row/Row';
-import { Player } from '../Player/Player';
+import { FinishTile } from './FinishTile/FinishTile';
 // @ts-ignore
 import styles from './Level.scss';
+import { Player } from './Player/Player';
 import { Tile } from './Tile/Tile';
 
 interface PropsLevel {
@@ -22,7 +23,7 @@ export const Level: FC<PropsLevel> = ({ levelData, onWin, onLoose }) => {
       [TileData.Walkable]: 'white',
       [TileData.Obstacle]: '#adadad',
    };
-   const tileSize: number = 40;
+   const tileSize: number = 80;
 
    const [playerPos, setPlayerPos] = useState<Vector>(levelData.startPos);
    const [remainingMoves, setRemainingMoves] = useState<number>(levelData.movesAvailable);
@@ -83,6 +84,7 @@ export const Level: FC<PropsLevel> = ({ levelData, onWin, onLoose }) => {
                   </Row>
                ))}
             </Column>
+            <FinishTile position={levelData.finishPos} tilesSize={tileSize} />
             <Player position={playerPos} tilesSize={tileSize} />
          </div>
          Moves left: {remainingMoves}

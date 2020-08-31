@@ -1,18 +1,19 @@
 import React, { FC } from 'react';
 import { hot } from 'react-hot-loader';
-import { Vector } from '../../../levels/tools/types/levelTypes';
+import { Vector } from '../../../../levels/tools/types/levelTypes';
 // @ts-ignore
-import styles from './Player.scss';
+import styles from './MapEntity.scss';
 
-interface PropsPlayer {
+export interface PropsMapEntity {
    position: Vector;
    tilesSize: number;
+   className?: string;
 }
 
-export const Player: FC<PropsPlayer> = ({ position, tilesSize, children }) => {
+export const MapEntity: FC<PropsMapEntity> = ({ position, tilesSize, className, children }) => {
    return (
       <div
-         className={styles.player}
+         className={`${styles.mapEntity} ${className && className}`}
          style={{
             width: tilesSize,
             height: tilesSize,
@@ -25,4 +26,4 @@ export const Player: FC<PropsPlayer> = ({ position, tilesSize, children }) => {
    );
 };
 
-export default hot(module)(Player);
+export default hot(module)(MapEntity);
