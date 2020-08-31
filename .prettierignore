@@ -1,5 +1,8 @@
 # Ignore everything:
 **/*.*
 
-# Except src folder:
-!/src
+# Except ts and js files:
+!*.js
+!*.jsx
+!*.ts
+!*.tsx
