@@ -6,6 +6,8 @@ then:
 
 ```npm start```
 
+Note: I only needed to write only one test file and it's located at: src/components/pages/Level/Tests/
+
 
 # Making Sense Labyrinth technical challenge
 
