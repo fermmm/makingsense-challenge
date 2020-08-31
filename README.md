@@ -6,7 +6,8 @@ then:
 
 ```npm start```
 
-Note: I only needed to write only one test file and it's located at: src/components/pages/Level/Tests/
+Note: For the game I only needed to write only one test file and it's located at: src/components/pages/Level/Tests/
+Although there is another basic test file for the Main component.
 
 
 # Making Sense Labyrinth technical challenge
