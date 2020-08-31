@@ -14,16 +14,16 @@ describe('<Level />', () => {
          [TileData.Walkable, TileData.Walkable, TileData.Walkable],
       ],
    };
-   const onWin = jest.fn();
-   const onLose = jest.fn();
 
    test('Renders correctly', () => {
-      const component = mount(<Level levelData={testLevel} onWin={onWin} onLoose={onLose} />);
+      const component = mount(<Level levelData={testLevel} onWin={() => {}} onLoose={() => {}} />);
       expect(component.html()).toMatchSnapshot();
       component.unmount();
    });
 
    test('Winning works correctly', () => {
+      const onWin = jest.fn();
+      const onLose = jest.fn();
       const component = mount(<Level levelData={testLevel} onWin={onWin} onLoose={onLose} />);
 
       act(() => {
@@ -35,6 +35,7 @@ describe('<Level />', () => {
       act(() => {
          window.dispatchEvent(new KeyboardEvent('keydown', { code: 'ArrowRight' }));
       });
+      expect(onLose).toHaveBeenCalledTimes(0);
       expect(onWin).toHaveBeenCalledTimes(1);
 
       expect(component.html()).toMatchSnapshot();
@@ -42,6 +43,8 @@ describe('<Level />', () => {
    });
 
    test('Loosing works correctly', () => {
+      const onWin = jest.fn();
+      const onLose = jest.fn();
       const component = mount(<Level levelData={testLevel} onWin={onWin} onLoose={onLose} />);
 
       act(() => {
@@ -53,6 +56,7 @@ describe('<Level />', () => {
       act(() => {
          window.dispatchEvent(new KeyboardEvent('keydown', { code: 'ArrowLeft' }));
       });
+      expect(onWin).toHaveBeenCalledTimes(0);
       expect(onLose).toHaveBeenCalledTimes(1);
 
       expect(component.html()).toMatchSnapshot();
