@@ -1,5 +1,8 @@
 .player {
-    text-align: center;
-    font-size: 24px;
-    padding-top: 24px;
+   position: absolute;
+   text-align: center;
+   font-size: 24px;
+   padding-top: 24px;
+   background-color: red;
+   transition: left 0.3s ease, top 0.3s ease;
 }

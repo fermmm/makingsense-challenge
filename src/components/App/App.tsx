@@ -2,7 +2,7 @@ import { createBrowserHistory, History } from 'history';
 import * as React from 'react';
 import { hot } from 'react-hot-loader';
 import { Route, Router, Switch } from 'react-router';
-import Level from '../pages/Level/Level';
+import { Main } from '../pages/Main/Main';
 import { ErrorBoundary } from './ErrorBoundary/ErrorBoundary';
 
 const history: History = createBrowserHistory();
@@ -12,7 +12,7 @@ export const App: React.FC = () => {
       <ErrorBoundary>
          <Router history={history}>
             <Switch>
-               <Route exact path={'/'} component={Level} />
+               <Route exact path={'/'} component={Main} />
             </Switch>
          </Router>
       </ErrorBoundary>

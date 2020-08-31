@@ -1,13 +1,14 @@
-import { Level, Tile } from './types/levelTypes';
+import { LevelData, TileData } from './tools/types/levelTypes';
 
-export const level1: Level = {
+export const level1: LevelData = {
    startPos: { x: 0, y: 0 },
    finishPos: { x: 4, y: 4 },
+   movesAvailable: 8,
    map: [
-      [Tile.Walkable, Tile.Walkable, Tile.Walkable, Tile.Walkable, Tile.Walkable],
-      [Tile.Obstacle, Tile.Obstacle, Tile.Walkable, Tile.Obstacle, Tile.Obstacle],
-      [Tile.Obstacle, Tile.Obstacle, Tile.Walkable, Tile.Obstacle, Tile.Obstacle],
-      [Tile.Walkable, Tile.Walkable, Tile.Walkable, Tile.Obstacle, Tile.Obstacle],
-      [Tile.Obstacle, Tile.Obstacle, Tile.Walkable, Tile.Walkable, Tile.Walkable],
+      [TileData.Walkable, TileData.Walkable, TileData.Walkable, TileData.Walkable, TileData.Walkable],
+      [TileData.Obstacle, TileData.Obstacle, TileData.Walkable, TileData.Obstacle, TileData.Obstacle],
+      [TileData.Obstacle, TileData.Obstacle, TileData.Walkable, TileData.Obstacle, TileData.Obstacle],
+      [TileData.Walkable, TileData.Walkable, TileData.Walkable, TileData.Obstacle, TileData.Obstacle],
+      [TileData.Obstacle, TileData.Obstacle, TileData.Walkable, TileData.Walkable, TileData.Walkable],
    ],
 };
